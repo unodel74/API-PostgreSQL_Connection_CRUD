@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Banco Asturias</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Cartera de Depósitos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>NIF/CIF</th>
+                    <th>Id activo</th>
+                    <th>Entidad</th>
+                    <th>Saldo inicial (€)</th>
+                    <th>Interés anual</th>
+                    <th>Plazo en días</th>
+                    <th>Fecha de contratación</th>
+                    <th>Valor Actual (€)</th>
+                    <th>Variación (€)</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for cartera_depos in cartera_depos %}
+                <tr>
+                    <td>{{ cartera_depos[0] }}</td>
+                    <td>{{ cartera_depos[1] }}</td>
+                    <td>{{ cartera_depos[2] }}</td>
+                    <td>{{ cartera_depos[3] }}</td>
+                    <td>{{ cartera_depos[4] }}</td>
+                    <td>{{ cartera_depos[7] }}</td>
+                    <td>{{ cartera_depos[5] }}</td>
+                    <td>{{ cartera_depos[6] }}</td>
+                    <td>{{ cartera_depos[8] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </body>
+</html>

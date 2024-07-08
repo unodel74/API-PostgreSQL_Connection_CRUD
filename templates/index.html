@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <title>Banco Asturias</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Usuarios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>NIF/CIF</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in usuarios %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Agregar Usuario</h1>
+    <form action="/add_user" method="post">
+        <label for="nif">NIF/CIF:</label>
+        <input type="text" id="nif" name="nif"><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br>
+        <input type="submit" value="Agregar Usuario">
+    </form>
+
+    <h3>Eliminar Usuario</h1>
+    <form action="/delete_user" method="post">
+        <label for="nif">NIF/CIF:</label>
+        <input type="text" id="nif" name="nif"><br>
+        <input type="submit" value="Eliminar Usuario">
+    </form>
+
+    <h3>Mostrar la Cartera Total de un usuario</h1>
+    <form action="/cartera_user" method="post">
+        <label for="nif">NIF/CIF:</label>
+        <input type="text" id="nif" name="nif"><br>
+        <input type="submit" value="Mostrar">
+    </form>
+
+    <h3>Mostrar la Cartera de Acciones de un usuario</h1>
+    <form action="/cartera_acciones" method="post">
+        <label for="nif">NIF/CIF:</label>
+        <input type="text" id="nif" name="nif"><br>
+        <input type="submit" value="Mostrar">
+    </form>
+
+    <h3>Mostrar la Cartera de Bonos de un usuario</h1>
+    <form action="/cartera_bonos" method="post">
+        <label for="nif">NIF/CIF:</label>
+        <input type="text" id="nif" name="nif"><br>
+        <input type="submit" value="Mostrar">
+    </form>
+
+    <h3>Mostrar la Cartera de Depósitos de un usuario</h1>
+    <form action="/cartera_depos" method="post">
+        <label for="nif">NIF/CIF:</label>
+        <input type="text" id="nif" name="nif"><br>
+        <input type="submit" value="Mostrar">
+    </form>
+
+    <h1>Lista de Acciones</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ISIN</th>
+                <th>Entidad</th>
+                <th>Valor de Mercado (€)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for accion in acciones %}
+            <tr>
+                <td>{{ accion[0] }}</td>
+                <td>{{ accion[3] }}</td>
+                <td>{{ accion[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Lista de Bonos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ISIN</th>
+                <th>Entidad</th>
+                <th>Valor Nominal</th>
+                <th>Tasa de Interés</th>
+                <th>Fecha de Emisión</th>
+                <th>Fecha de Vencimiento</th>
+                <th>Valor de Mercado (€)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bonos in bonos %}
+            <tr>
+                <td>{{ bonos[0] }}</td>
+                <td>{{ bonos[3] }}</td>
+                <td>{{ bonos[4] }}</td>
+                <td>{{ bonos[5] }}</td>
+                <td>{{ bonos[6] }}</td>
+                <td>{{ bonos[7] }}</td>
+                <td>{{ bonos[8] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Lista de Depósitos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Entidad</th>
+                <th>Interés</th>
+                <th>Plazo del Depósito (días)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for depo in depositos %}
+            <tr>
+                <td>{{ depo[0] }}</td>
+                <td>{{ depo[3] }}</td>
+                <td>{{ depo[4] }}</td>
+                <td>{{ depo[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

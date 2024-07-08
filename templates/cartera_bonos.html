@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Banco Asturias</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Cartera de Bonos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>NIF/CIF</th>
+                    <th>ISIN</th>
+                    <th>Entidad</th>
+                    <th>Interés</th>
+                    <th>Valor nominal</th>
+                    <th>Fecha de emisión</th>
+                    <th>Fecha de vencimiento</th>
+                    <th>Fecha de compra</th>
+                    <th>Cantidad</th>
+                    <th>Precio de compra</th>
+                    <th>Precio actual</th>
+                    <th>Valor actual</th>
+                    <th>Variación (€)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cartera_bonos in cartera_bonos %}
+                <tr>
+                    <td>{{ cartera_bonos[0] }}</td>
+                    <td>{{ cartera_bonos[1] }}</td>
+                    <td>{{ cartera_bonos[2] }}</td>
+                    <td>{{ cartera_bonos[3] }}</td>
+                    <td>{{ cartera_bonos[4] }}</td>
+                    <td>{{ cartera_bonos[5] }}</td>
+                    <td>{{ cartera_bonos[6] }}</td>
+                    <td>{{ cartera_bonos[7] }}</td>
+                    <td>{{ cartera_bonos[8] }}</td>
+                    <td>{{ cartera_bonos[9] }}</td>
+                    <td>{{ cartera_bonos[10] }}</td>
+                    <td>{{ cartera_bonos[11] }}</td>
+                    <td>{{ cartera_bonos[12] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </body>
+</html>

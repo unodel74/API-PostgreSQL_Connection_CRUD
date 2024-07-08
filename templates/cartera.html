@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Banco Asturias</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Cartera Total</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo de activo</th>
+                    <th>NIF/CIF</th>
+                    <th>Id activo</th>
+                    <th>Entidad</th>
+                    <th>Cantidad</th>
+                    <th>Precio Compra</th>
+                    <th>Fecha Compra</th>
+                    <th>Precio Actual</th>
+                    <th>Valor Actual (€)</th>
+                    <th>Variación (€)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cartera in cartera %}
+                <tr>
+                    <td>{{ cartera[0] }}</td>
+                    <td>{{ cartera[1] }}</td>
+                    <td>{{ cartera[2] }}</td>
+                    <td>{{ cartera[3] }}</td>
+                    <td>{{ cartera[4] }}</td>
+                    <td>{{ cartera[5] }}</td>
+                    <td>{{ cartera[6] }}</td>
+                    <td>{{ cartera[7] }}</td>
+                    <td>{{ cartera[8] }}</td>
+                    <td>{{ cartera[9] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </body>
+</html>
